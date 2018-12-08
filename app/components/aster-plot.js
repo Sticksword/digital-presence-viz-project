@@ -1,5 +1,5 @@
 import Component from '@ember/component'
-import layout from '../templates/components/real-aster-plot'
+import layout from '../templates/components/aster-plot'
 import { run } from '@ember/runloop'
 import { get } from '@ember/object'
 import tip from 'd3-tip';
