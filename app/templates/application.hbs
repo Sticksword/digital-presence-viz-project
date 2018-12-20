@@ -1,1 +1,16 @@
-{{outlet}}
+<nav class="fixed-parent">
+  <div class="flex-nav">
+    <div class="left-nav">
+      {{#link-to "index" class="flex-nav__link"}}Michael Chen{{/link-to}}
+    </div>
+    <div class="right-nav">
+      {{#link-to "goals" class="flex-nav__link"}}Goals{{/link-to}}
+      {{#link-to "pillars" class="flex-nav__link"}}Pillars{{/link-to}}
+      {{#link-to "progress-reports" class="flex-nav__link"}}Progress Reports{{/link-to}}
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  {{outlet}}
+</div>

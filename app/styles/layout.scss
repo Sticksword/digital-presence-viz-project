@@ -1,0 +1,58 @@
+body {
+  margin: 0; /* offset user agent stylesheet */
+}
+
+.fixed-parent {
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.flex-nav {
+  // font: 10px sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+}
+
+.flex-nav__link {
+  padding: 8px 16px;
+  color: gray;
+  font-size: 22px;
+  text-decoration: none;
+  font-family: Audrey, sans-serif;
+}
+
+.flex-nav__link:hover {
+  color: black;
+  // background-color: lightblue;
+  // box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-color: #66afe9;
+  box-shadow: 0 0 8px rgba(255,0,0, 0.6);
+  transition: all 1.0s ease-out;
+}
+
+.left-nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Webfont: Audrey */
+/* https://www.behance.net/gallery/32938133/Audrey-FREE-FONT */
+@font-face {
+  font-family: 'Audrey';
+  src: url('fonts/audrey-normal.woff2') format('woff2'), /* Modern Browsers */
+       url('fonts/audrey-normal.woff') format('woff'), /* Modern Browsers */
+       url('fonts/audrey-normal.ttf') format('truetype');
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.container {
+  margin-top: 73px;
+}

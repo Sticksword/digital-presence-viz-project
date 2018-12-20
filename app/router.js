@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('insights', function() {
     this.route('aster');
   });
+  this.route('pillars');
+  this.route('goals');
+  this.route('progress-reports');
 });
 
 export default Router;
