@@ -1,54 +1,11 @@
 
-.row {
-  margin: -19.33% 0;
-  text-align: center;
-}
-
 .row:first-child {
-  margin-top: -1%;
+  margin-top: 13%;
 }
 
-/* creates diamond */
-.hexagon {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  margin: 3.3% 8.1%; /* spacing between hexagons */
-  padding: 12%; /* sizing hexagons without content inside */
-  transform: rotate(30deg) skewY(30deg) scaleX(.866); /* .866 = sqrt(3)/2 */
-}
-
-/* squeezes diamond into hexagon */
-.hexagon:before {
-  // display: block;
-  position: absolute;
-  /* 86.6% = (sqrt(3)/2)*100% = .866*100% */
-  top: 6.7%; right: 0; bottom: 6.7%; left: 0; /* 6.7% = (100% - 86.6%)/2 */
-  transform: scaleX(1.155) /* 1.155 = 2/sqrt(3) */ skewY(-30deg) rotate(-30deg); /* balances out the other transform */
-
-  background-color: rgba(30, 144, 255, .1); /* adds content background-color */
-  /* add background images to :before pseudo-elements */
-  background-size: cover;
-  content: '';
-  // background-image: url(square.png);
-}
-
-.hexagon:hover:before, .hexagon:hover {
-  background-color: red;
-}
-
-/* inserts content and rotates properly to fit hexagon */
-.content:after {
-  // display: block;
-  position: absolute;
-  /* 86.6% = (sqrt(3)/2)*100% = .866*100% */
-  top: 42%; right: 0; bottom: 51%; left: 0; /* 6.7% = (100% - 86.6%)/2 */
-  transform: scaleX(1.155) /* 1.155 = 2/sqrt(3) */ 
-         skewY(-30deg) rotate(-30deg);
-  // background-color: rgba(30, 144, 255, .5); /* adds content background-color */
-  content: attr(data-content);
-  font-size: 22px;
-  font-family: Audrey, sans-serif;
+.row {
+  display: flex;
+  justify-content: center;
 }
 
 

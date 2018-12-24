@@ -10,7 +10,15 @@ Router.map(function() {
   this.route('insights', function() {
     this.route('aster');
   });
-  this.route('pillars');
+  this.route('pillars', function() {
+    this.route('learning');
+    this.route('exploring');
+    this.route('family');
+    this.route('contributing');
+    this.route('winning');
+    this.route('gaming');
+    this.route('programming');
+  });
   this.route('goals');
   this.route('progress-reports');
 });
