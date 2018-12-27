@@ -5,6 +5,7 @@ export default Component.extend({
   // passed in
   selectedData: null,
   selectedIndex: 0,
+  goRight: null,
 
   disableToRight: computed('selectedIndex', function() {
     return (this.get('model').length - 1) == this.get('selectedIndex');
@@ -13,8 +14,6 @@ export default Component.extend({
   disableToLeft: computed('selectedIndex', function() {
     return 0 == this.get('selectedIndex');
   }),
-
-  isEditing: false,
 
   init() {
     this.set('selectedData', this.get('model').firstObject);
@@ -29,11 +28,13 @@ export default Component.extend({
     next() {
       this.set('selectedIndex', this.get('selectedIndex') + 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
+      this.set('goRight', true);
     },
 
     previous() {
       this.set('selectedIndex', this.get('selectedIndex') - 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
+      this.set('goRight', false);
     }
   }
 });

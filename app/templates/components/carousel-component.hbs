@@ -1,21 +1,19 @@
-
-{{ log model }}
-
 <div class="row">
 
   <button disabled={{ disableToLeft }} onclick={{ action "previous" }}>&larr;</button>
 
-{{!--   {{#liquid-if isEditing class="band-description"}}
-    <div class="">
-      {{textarea class="form-control" value=model.books}}
+  {{#liquid-bind selectedData bool use=(if goRight "toLeft" "toRight") class="carousel" as |data|}}
+    {{ log data }}
+    <div class="carousel__header">
+      {{ data.name }}
     </div>
-  {{else}}
-    <p>{{model.classes}}</p>
-  {{/liquid-if}} --}}
-
-  {{#liquid-bind selectedIndex class="carousel"}}
-    {{ log selectedData }}
-    {{selectedData.content}}
+    <hr>
+    <div class="carousel__body">
+      <div>{{ data.summary }}</div>
+      {{#each data.tabs as |tab-item|}}
+        <div>{{tab-item.title}}</div>
+      {{/each}}
+    </div>
   {{/liquid-bind}}
 
   <button disabled={{ disableToRight }} onclick={{ action "next" }}>&rarr;</button>

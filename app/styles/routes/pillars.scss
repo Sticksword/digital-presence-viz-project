@@ -1,6 +1,6 @@
 
 .row:first-child {
-  margin-top: 13%;
+  margin-top: 6%;
 }
 
 .row {
@@ -8,4 +8,6 @@
   justify-content: center;
 }
 
-
+.row:last-child {
+  margin-bottom: 6%;
+}

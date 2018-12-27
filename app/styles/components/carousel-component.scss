@@ -3,3 +3,14 @@
   display: flex;
   justify-content: center;
 }
+
+.carousel__header {
+  font-size: 48px;
+  text-align: center;
+}
+
+.carousel__body {
+  font-size: 36px;
+  min-height: 350px;
+  overflow-y: scroll;
+}
