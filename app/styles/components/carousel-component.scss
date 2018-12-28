@@ -1,16 +1,67 @@
-.carousel {
+.row button {
+  color: #0099CC;
+  background: transparent;
+  border: 1px solid #0099CC;
+  border-radius: 6px;
+}
+
+.row button:hover:not([disabled]) {
+  background-color: #008CBA;
+  color: white;
+  cursor: pointer;
+}
+
+.row button:disabled {
+  background-color: lightgray;
+  color: white;
+}
+
+.display {
   width: 80%;
   display: flex;
   justify-content: center;
 }
 
-.carousel__header {
+.display__header {
   font-size: 48px;
+  margin: 8px;
   text-align: center;
 }
 
-.carousel__body {
-  font-size: 36px;
-  min-height: 350px;
+.display hr {
+  width: 60%;
+}
+
+.display__body {
+  height: 400px;
   overflow-y: scroll;
+}
+
+.display__summary {
+  font-size: 32px;
+  margin: 8px;
+}
+
+.tabs-container {
+  display: flex;
+}
+
+.tabs-container__tabs {
+
+}
+
+.tabs-container__tab {
+  font-size: 28px;
+  margin: 8px;
+  border: 1px solid #0099CC;
+  width: 200px;
+}
+
+.tabs-container__tab:hover {
+  cursor: pointer;
+}
+
+.tabs-container__details {
+  margin: 8px;
+  font-size: 28px;
 }

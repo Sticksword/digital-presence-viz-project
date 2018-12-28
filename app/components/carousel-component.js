@@ -17,23 +17,26 @@ export default Component.extend({
 
   init() {
     this.set('selectedData', this.get('model').firstObject);
+    this.set('selectedTab', this.get('selectedData.tabs').firstObject);
     this._super(...arguments);
   },
 
   actions: {
-    changeIsEditing() {
-      this.set('isEditing', !this.get('isEditing'));
+    selectTab(index) {
+      this.set('selectedTab', this.get('selectedData.tabs')[index]);
     },
 
     next() {
       this.set('selectedIndex', this.get('selectedIndex') + 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
+      this.set('selectedTab', this.get('selectedData.tabs').firstObject);
       this.set('goRight', true);
     },
 
     previous() {
       this.set('selectedIndex', this.get('selectedIndex') - 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
+      this.set('selectedTab', this.get('selectedData.tabs').firstObject);
       this.set('goRight', false);
     }
   }
