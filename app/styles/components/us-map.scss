@@ -1,0 +1,46 @@
+/* On mouse hover, lighten state color */
+path:hover {
+  fill-opacity: .7;
+}
+
+.map {
+  width: 100%;
+  /*min-width: 870px;*/
+  height: 100%;
+  border-left: 1px solid gray;
+  background-color: #ADDBFD;
+}
+
+/* map */
+.feature {
+  fill: none;
+  stroke: grey;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+}
+
+.mesh {
+  fill: none;
+  stroke: lightgrey;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.selected-circle {
+  fill: rgb(2,91,67);
+}
+
+.nonselected-circle {
+  fill: rgb(217,91,67);
+}
+
+/* tip */
+.d3-tip p {
+  margin: 0;
+  padding: 0;
+  color:white;
+}
+.d3-tip {
+  padding: 10px;
+  background-color:rgba(255, 153, 102, 0.9);
+}
