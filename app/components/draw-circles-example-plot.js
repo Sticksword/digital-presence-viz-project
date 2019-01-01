@@ -36,7 +36,6 @@ export default Component.extend({
   },
 
   drawCircles() {
-    console.log('drawCircles')
     let plot = select(this.element)
     let data = get(this, 'data')
     let width = get(this, 'width')

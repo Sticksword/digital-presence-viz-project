@@ -11,18 +11,22 @@
     <div class="display__body">
       <div class="display__summary">{{ data.summary }}</div>
       <hr>
-      <div class="tabs-container">
-        <div class="tabs-container__tabs">
-          {{#each data.tabs as |tab index|}}
-            <div class="tabs-container__tab" onclick={{ action "selectTab" index }}>{{tab.title}}</div>
-          {{/each}}
+      {{#if (has-block)}}
+        {{yield selectedTab}}
+      {{else}}
+        <div class="tabs-container">
+          <div class="tabs-container__tabs">
+            {{#each data.tabs as |tab index|}}
+              <div class="tabs-container__tab" onclick={{ action "selectTab" index }}>{{tab.title}}</div>
+            {{/each}}
+          </div>
+          <div class="tabs-container__details">
+            {{#liquid-bind selectedTab bool use="fade" as |tab|}}
+              {{tab.details}}
+            {{/liquid-bind}}
+          </div>
         </div>
-        <div class="tabs-container__details">
-          {{#liquid-bind selectedTab bool use="fade" as |tab|}}
-            {{tab.details}}
-          {{/liquid-bind}}
-        </div>
-      </div>
+      {{/if}}
     </div>
   {{/liquid-bind}}
 

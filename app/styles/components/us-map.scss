@@ -5,7 +5,7 @@ path:hover {
 
 .map {
   width: 100%;
-  /*min-width: 870px;*/
+  // min-width: 870px;
   height: 100%;
   border-left: 1px solid gray;
   background-color: #ADDBFD;
@@ -40,6 +40,7 @@ path:hover {
   padding: 0;
   color:white;
 }
+
 .d3-tip {
   padding: 10px;
   background-color:rgba(255, 153, 102, 0.9);

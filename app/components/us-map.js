@@ -2,13 +2,11 @@ import Component from '@ember/component';
 import layout from '../templates/components/us-map';
 import { get } from '@ember/object';
 import tip from 'd3-tip';
-import { queue } from 'd3-queue'; // because the d3-queue module is written as a named export
 import { feature, mesh } from 'topojson';
 
 // Import the D3 packages we want to use
 import { json, csv } from 'd3-fetch';
 import { select } from 'd3-selection';
-import { transition } from 'd3-transition'
 import { geoMercator, geoPath } from 'd3-geo'
 
 export default Component.extend({
@@ -17,8 +15,8 @@ export default Component.extend({
   tagName: 'svg',
   classNames: ['us-map'],
 
-  width: 900,
-  height: 700,
+  width: 700,
+  height: 500,
 
   attributeBindings: ['width', 'height'],
 
@@ -39,8 +37,8 @@ export default Component.extend({
     var path = geoPath().projection(projection);
 
     var svg = plot.append("svg")
-                  .attr("width", "100%")
-                  .attr("height", '100%')
+                  .attr("width", width)
+                  .attr("height", height)
                   .attr("viewBox", "65 200 870 250")
                   .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -53,12 +51,10 @@ export default Component.extend({
     var myTip = tip().attr('class', 'd3-tip')
       .offset([-10, 0])
       .html(function(d) {
-        string_county = "<p>" + d.place + "</p>"
-
-        return string_county;
+        return "<p>" + d.Name + "</p>";
     });
 
-    var airport_data = [];
+    var citiesLived = [];
     function ready(data) {
       var states = feature(data[0], data[0].objects.states).features
       projection.scale(800).center([-97, 43])
@@ -77,36 +73,29 @@ export default Component.extend({
         .attr("class", "mesh")
         .attr("d", path);
 
-
       data[1].forEach(function(row){
-        let airport_location = [+row.lon, +row.lat];
-        airport_data.push({"ID": row.ID,
-          "location": airport_location,
+        citiesLived.push({"ID": row.ID,
+          "location": [+row.lon, +row.lat],
           "Name": row.place,
           "traffic": +row.years,
           "selected": false});
       });
 
-
       // add circles to svg
       svg.selectAll(".circle")
-        .data(airport_data).enter()
+        .data(citiesLived).enter()
         .append("circle")
         .attr("id", function(d) { return "cir-1"; })
         .attr("cx", function (d) {
-            console.log(d.location);
-             return projection(d.location)[0]; })
+              console.log(d.location);
+              return projection(d.location)[0]; })
         .attr("cy", function (d) { return projection(d.location)[1]; })
         .attr("r", function (d) { return d.traffic; })
         .call(myTip)
         .attr("class", "nonselected-circle")
         .on('mouseover', myTip.show)
         .on('mouseout', myTip.hide);
-        // .on('click', apt_select);
 
-    };
-
-
-
+    }
   }
 })

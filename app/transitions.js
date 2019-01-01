@@ -2,8 +2,15 @@ export default function() {
   this.transition(
     this.fromRoute('pillars.index'),
     this.toRoute('pillars.learning'),
-    this.use('toUp'),
-    this.reverse('toDown')
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
+  this.transition(
+    this.fromRoute('pillars.index'),
+    this.toRoute('pillars.exploring'),
+    this.use('fade'),
+    this.reverse('fade')
   );
 
   // this.transition(
@@ -22,4 +29,4 @@ export default function() {
   //   this.reverse('toRight')
   // );
 
-};
+}
