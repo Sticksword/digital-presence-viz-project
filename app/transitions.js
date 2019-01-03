@@ -13,6 +13,13 @@ export default function() {
     this.reverse('fade')
   );
 
+  this.transition(
+    this.fromRoute('pillars.index'),
+    this.toRoute('pillars.gaming'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
   // this.transition(
   //   this.hasClass('carousel'),
   //   this.fromValue(0),

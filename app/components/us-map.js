@@ -15,8 +15,8 @@ export default Component.extend({
   tagName: 'svg',
   classNames: ['us-map'],
 
-  width: 700,
-  height: 500,
+  width: 708,
+  height: 480,
 
   attributeBindings: ['width', 'height'],
 
@@ -26,9 +26,6 @@ export default Component.extend({
 
   draw() {
     let plot = select(this.element);
-    let width = get(this, 'width');
-    let height = get(this, 'height');
-    var margin = {top: 0, right: 0, bottom: 0, left: 0 };
 
     // set projection
     var projection = geoMercator();
@@ -37,11 +34,10 @@ export default Component.extend({
     var path = geoPath().projection(projection);
 
     var svg = plot.append("svg")
-                  .attr("width", width)
-                  .attr("height", height)
+                  .attr("width", get(this, 'width'))
+                  .attr("height", get(this, 'height'))
                   .attr("viewBox", "65 200 870 250")
-                  .append("g")
-                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                  .append("g");
 
     var promises = [];
     promises.push(json("/assets/us.json"));

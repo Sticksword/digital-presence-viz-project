@@ -3,7 +3,7 @@
   background: transparent;
   border: 1px solid #0099CC;
   border-radius: 6px;
-  width: 10%;
+  width: 10vw;
 }
 
 .row button:hover:not([disabled]) {
@@ -18,8 +18,7 @@
 }
 
 .display {
-  width: 80%;
-  // height: 100vh;
+  width: 80vw;
   display: flex;
   justify-content: center;
 }

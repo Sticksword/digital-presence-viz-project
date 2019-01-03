@@ -67,7 +67,6 @@ export default Component.extend({
     var radius = Math.min(width, height) / 2,
         innerRadius = 0.3 * radius;
 
-
     var asterPie = pie()
         .value(function(d) { return d.width; });
     console.log(data);
@@ -90,7 +89,7 @@ export default Component.extend({
             .innerRadius(innerRadius)
             .outerRadius(radius);
 
-    var svg = select("body").append("svg")
+    var svg = plot.append("svg")
         .attr("width", width)
         .attr("height", height)
         .append("g")
