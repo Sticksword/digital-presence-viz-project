@@ -17,7 +17,9 @@
         <div class="tabs-container">
           <div class="tabs-container__tabs">
             {{#each data.tabs as |tab index|}}
-              <div class="tabs-container__tab" onclick={{ action "selectTab" index }}>{{tab.title}}</div>
+              {{#liquid-bind selectedTabIndex bool use="fade" as |tabIndex|}}
+                <div class="tabs-container__tab {{ if (eq tabIndex index) "selected" "" }}" onclick={{ action "selectTab" index }}>{{tab.title}}</div>
+              {{/liquid-bind}}
             {{/each}}
           </div>
           <div class="tabs-container__details">

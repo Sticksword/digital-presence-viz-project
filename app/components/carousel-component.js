@@ -5,6 +5,9 @@ export default Component.extend({
   // passed in
   selectedData: null,
   selectedIndex: 0,
+
+  selectedTab: null,
+  selectedTabIndex: 0,
   goRight: null,
 
   disableToRight: computed('selectedIndex', function() {
@@ -18,18 +21,21 @@ export default Component.extend({
   init() {
     this.set('selectedData', this.get('model').firstObject);
     this.set('selectedTab', this.get('selectedData.tabs').firstObject);
+    this.set('selectedTabIndex', 0); // redundant, refactor later
     this._super(...arguments);
   },
 
   actions: {
     selectTab(index) {
       this.set('selectedTab', this.get('selectedData.tabs')[index]);
+      this.set('selectedTabIndex', index);
     },
 
     next() {
       this.set('selectedIndex', this.get('selectedIndex') + 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
       this.set('selectedTab', this.get('selectedData.tabs').firstObject);
+      this.set('selectedTabIndex', 0);
       this.set('goRight', true);
     },
 
@@ -37,6 +43,7 @@ export default Component.extend({
       this.set('selectedIndex', this.get('selectedIndex') - 1);
       this.set('selectedData', this.get('model')[this.get('selectedIndex')]);
       this.set('selectedTab', this.get('selectedData.tabs').firstObject);
+      this.set('selectedTabIndex', 0);
       this.set('goRight', false);
     }
   }

@@ -2,7 +2,7 @@
   color: #0099CC;
   background: transparent;
   border: 1px solid #0099CC;
-  border-radius: 6px;
+  border-radius: 8px;
   width: 10vw;
 }
 
@@ -19,8 +19,6 @@
 
 .display {
   width: 80vw;
-  display: flex;
-  justify-content: center;
 }
 
 .display__header {
@@ -34,7 +32,7 @@
 }
 
 .display__body {
-  height: 500px;
+  height: 520px;
   overflow-y: scroll;
 }
 
@@ -53,16 +51,28 @@
 
 .tabs-container__tab {
   font-size: 28px;
-  margin: 8px;
+  padding: 16px;
   border: 1px solid #0099CC;
   width: 200px;
+  color: #0099CC;
+  background: transparent;
+  border-radius: 8px;
+
+  &.selected {
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+  }
 }
 
 .tabs-container__tab:hover {
+  background-color: #008CBA;
+  color: white;
   cursor: pointer;
-}
+} // refactor into sharable generic hoverable button
 
 .tabs-container__details {
   margin: 16px;
   font-size: 24px;
+  flex-grow: 1;
 }

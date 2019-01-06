@@ -27,6 +27,18 @@ export default Route.extend({
         'name': 'Fashion',
         'summary': "A potato still gotta look good to be made into a fry!",
         'tabs': []
+      }, {
+        'name': 'Social Media',
+        'summary': "This potato wants to be famous one day for being the frenchiest fry!",
+        'tabs': [
+          {
+            'title': 'YouTube',
+            'details': 'Hmm ask me directly about this...'
+          }, {
+            'title': 'IG',
+            'details': 'Currently tryna be a micro influencer but sucking at it.'
+          }
+        ]
       }
     ];
   }
