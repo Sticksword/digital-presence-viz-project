@@ -15,7 +15,35 @@ export default function() {
 
   this.transition(
     this.fromRoute('pillars.index'),
+    this.toRoute('pillars.competing'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
+  this.transition(
+    this.fromRoute('pillars.index'),
+    this.toRoute('pillars.family'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
+  this.transition(
+    this.fromRoute('pillars.index'),
+    this.toRoute('pillars.potatoing'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
+  this.transition(
+    this.fromRoute('pillars.index'),
     this.toRoute('pillars.gaming'),
+    this.use('fade'),
+    this.reverse('fade')
+  );
+
+  this.transition(
+    this.fromRoute('pillars.index'),
+    this.toRoute('pillars.programming'),
     this.use('fade'),
     this.reverse('fade')
   );

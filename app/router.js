@@ -14,8 +14,8 @@ Router.map(function() {
     this.route('learning');
     this.route('exploring');
     this.route('family');
-    this.route('contributing');
-    this.route('winning');
+    this.route('potatoing');
+    this.route('competing');
     this.route('gaming');
     this.route('programming');
   });

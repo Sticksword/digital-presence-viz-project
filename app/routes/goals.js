@@ -17,8 +17,11 @@ export default Route.extend({
             'title': 'Get huge & stay healthy',
             'details': 'Play basketball & tennis. Hit the gyms hard every weekday. Bike to work. Go to sleep early fucker.'
           }, {
+            'title': 'Square',
+            'details': 'Work towards L5, and also maintain strict schedule and become more efficient'
+          }, {
             'title': 'Misc extracurriculars?',
-            'details': 'Japanese (can practice with Michelle when there is rare free time), Piano'
+            'details': 'Read from time to time. Japanese (can practice with Michelle when there is rare free time). Piano.'
           }, {
             'title': 'Relax and enjoy the ride',
             'details': "Don't forget to jerk off every now and then :)"
