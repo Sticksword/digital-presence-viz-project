@@ -15,7 +15,7 @@
     "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "start": "ember serve",
     "test": "ember test",
-    "deploy": "ember build && gh-pages -d dist"
+    "deploy": "ember build --prod && ./node_modules/gh-pages/bin/gh-pages.js -d dist"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
