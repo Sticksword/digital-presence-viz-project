@@ -14,7 +14,8 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "deploy": "ember build && gh-pages -d dist"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
@@ -45,6 +46,7 @@
     "ember-truth-helpers": "^2.1.0",
     "ember-welcome-page": "^3.0.0",
     "eslint-plugin-ember": "^5.0.0",
+    "gh-pages": "^2.0.1",
     "liquid-fire": "^0.29.5",
     "loader.js": "^4.2.3",
     "sass": "^1.14.2"
